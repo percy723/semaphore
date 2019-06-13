@@ -14,7 +14,7 @@ import (
 	"github.com/ansible-semaphore/semaphore/util"
 	"github.com/castawaylabs/mulekick"
 	sq "github.com/masterminds/squirrel"
-	"golang.org/x/crypto/bcrypt"
+	//"golang.org/x/crypto/bcrypt"
 	"gopkg.in/ldap.v2"
 )
 
@@ -173,7 +173,7 @@ func login(w http.ResponseWriter, r *http.Request) {
 
 	session := db.Session{
 		UserID:     user.ID,
-		Created:    time.Now(),
+		// Created:    time.Now(),
 		LastActive: time.Now(),
 		IP:         r.Header.Get("X-Real-IP"),
 		UserAgent:  r.Header.Get("user-agent"),
