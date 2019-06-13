@@ -14,7 +14,7 @@ import (
 	"github.com/ansible-semaphore/semaphore/util"
 	"github.com/castawaylabs/mulekick"
 	sq "github.com/masterminds/squirrel"
-	//"golang.org/x/crypto/bcrypt"
+	"golang.org/x/crypto/bcrypt"
 	"gopkg.in/ldap.v2"
 )
 
@@ -161,15 +161,15 @@ func login(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// non-ldap login
-//	if !user.External {
-//		if err = bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(login.Password)); err != nil {
-//			w.WriteHeader(http.StatusBadRequest)
-//			return
-//		}
+	non-ldap login
+	if !user.External {
+		if err = bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(login.Password)); err != nil {
+			w.WriteHeader(http.StatusBadRequest)
+			return
+		}
 
-		// authenticated.
-	//}
+		//authenticated.
+	}
 
 	session := db.Session{
 		UserID:     user.ID,
