@@ -169,7 +169,7 @@ func login(w http.ResponseWriter, r *http.Request) {
 //		}
 
 		// authenticated.
-	}
+	//}
 
 	session := db.Session{
 		UserID:     user.ID,
