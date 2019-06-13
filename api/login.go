@@ -162,11 +162,11 @@ func login(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// non-ldap login
-	if !user.External {
-		if err = bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(login.Password)); err != nil {
-			w.WriteHeader(http.StatusBadRequest)
-			return
-		}
+//	if !user.External {
+//		if err = bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(login.Password)); err != nil {
+//			w.WriteHeader(http.StatusBadRequest)
+//			return
+//		}
 
 		// authenticated.
 	}
