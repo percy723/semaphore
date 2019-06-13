@@ -161,7 +161,7 @@ func login(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	non-ldap login
+	//non-ldap login
 	if !user.External {
 		if err = bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(login.Password)); err != nil {
 			w.WriteHeader(http.StatusBadRequest)
